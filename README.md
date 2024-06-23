@@ -13,6 +13,12 @@
 <img width="1440" alt="Screenshot 2024-06-23 at 9 31 39 AM" src="https://github.com/vaishnovi3113/Language-Learning-Website/assets/144097894/1538f2e7-f8c5-4b10-af6c-405af064cc65">
 
 
+<img width="1440" alt="Screenshot 2024-06-23 at 9 32 29 AM" src="https://github.com/vaishnovi3113/Language-Learning-Website/assets/144097894/d8dd724a-da08-409d-a5e2-9f65c3519556">
+
+
+
+ 
+
 <img width="1440" alt="Screenshot 2024-06-23 at 10 57 48 AM" src="https://github.com/vaishnovi3113/Language-Learning-Website/assets/144097894/a4c31e4d-9000-4a82-b096-1cbcafa4a461">
 
 
