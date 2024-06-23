@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanish Language Quiz</title>
+    <style>
+            body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: rgba(65, 64, 70);
+    color: #333;
+}
+        .question {
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .feedback {
+            display: none;
+        }
+        .correct-answer {
+            font-weight: bold;
+            color: green;
+        }
+        .wrong-answer {
+            font-weight: bold;
+            color: red;
+        }
+        .btn {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.5cm;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s ease;
+    position: absolute;
+    top: 700px;
+    right: 100px;
+}
+.btn:hover {
+    background: black;
+    color: white;
+}
+        .appreciation {
+            display: none;
+            font-weight: bold;
+            color: green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Spanish Language Quiz</h1>
+    
+    <div class="question" id="question1">
+        <p>what is "las flores" in english</p>
+        <div class="options">
+            <label><input type="radio" name="answer1" value="the_flowers"> The Flowers</label>
+            <label><input type="radio" name="answer1" value="a_flower"> A Flower</label>
+            <label><input type="radio" name="answer1" value="the_flower"> The Flower</label>
+        </div>
+        <div class="feedback">
+            <span class="correct-answer"></span>
+            <span class="wrong-answer"></span>
+        </div>
+        <button class="btn">Next</button>
+    </div>
+
+    <div class="question" id="question2" style="display: none;">
+        <p> "el baño"</p>
+        <div class="options">
+            <label><input type="radio" name="answer2" value="the_bath"> The Bath</label>
+            <label><input type="radio" name="answer2" value="a_bath"> A Bath</label>
+            <label><input type="radio" name="answer2" value="the_bathroom"> The Bathroom</label>
+        </div>
+        <div class="feedback">
+            <span class="correct-answer"></span>
+            <span class="wrong-answer"></span>
+        </div>
+        <button class="btn">Next</button>
+    </div>
+
+    <div class="question" id="question3" style="display: none;">
+        <p> "Juan está comiendo manzanas" </p>
+        <div class="options">
+            <label><input type="radio" name="answer3" value="Juan_is_eating_apples"> Juan is eating apples</label>
+            <label><input type="radio" name="answer3" value="Juan_eats_apples"> Juan eats apples</label>
+            <label><input type="radio" name="answer3" value="Juan_is_drinking_water"> Juan is drinking water</label>
+        </div>
+        <div class="feedback">
+            <span class="correct-answer"></span>
+            <span class="wrong-answer"></span>
+        </div>
+        <button class="btn">Next</button>
+    </div>
+
+    <div class="question" id="question4" style="display: none;">
+        <p> "un pan"</p>
+        <div class="options">
+            <label><input type="radio" name="answer4" value="a_bread"> A Bread</label>
+            <label><input type="radio" name="answer4" value="the_bread"> The Bread</label>
+            <label><input type="radio" name="answer4" value="bread"> Bread</label>
+        </div>
+        <div class="feedback">
+            <span class="correct-answer"></span>
+            <span class="wrong-answer"></span>
+        </div>
+        <button class="btn">Next</button>
+    </div>
+
+    <div class="question" id="question5" style="display: none;">
+        <p>"Nisha come fruta"</p>
+        <div class="options">
+            <label><input type="radio" name="answer5" value="Nisha_eats_fruit"> Nisha eats fruit</label>
+            <label><input type="radio" name="answer5" value="Nisha_drinks_fruit"> Nisha drinks fruit</label>
+            <label><input type="radio" name="answer5" value="Nisha_likes_fruit"> Nisha likes fruit</label>
+        </div>
+        <div class="feedback">
+            <span class="correct-answer"></span>
+            <span class="wrong-answer"></span>
+        </div>
+        <button class="btn">Next</button>
+    </div>
+
+    <div class="appreciation" id="appreciation" style="display: none;">
+        <p>Hurray! You did well. Continue to the next level.</p>
+        <!-- Add a button to continue to the next level -->
+    </div>
+
+    <script>
+        const questions = document.querySelectorAll('.question');
+        const nextBtns = document.querySelectorAll('.btn');
+
+        let currentQuestionIndex = 0;
+
+        questions[currentQuestionIndex].style.display = 'block';
+
+        nextBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const currentQuestion = questions[currentQuestionIndex];
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    currentQuestion.style.display = 'none';
+                    questions[currentQuestionIndex].style.display = 'block';
+                } else {
+                    currentQuestion.style.display = 'none';
+                    displayAppreciation();
+                }
+            });
+        });
+
+        // Event listeners for radio buttons and showing feedback
+        const radioButtons = document.querySelectorAll('input[type="radio"]');
+        radioButtons.forEach(button => {
+            button.addEventListener('change', () => {
+                const currentQuestion = questions[currentQuestionIndex];
+                const selectedAnswer = currentQuestion.querySelector('input[name="answer' + (currentQuestionIndex + 1) + '"]:checked').value;
+                const correctAnswer = checkAnswer(currentQuestionIndex, selectedAnswer);
+                showFeedback(currentQuestion, correctAnswer);
+            });
+        });
+
+        function checkAnswer(questionIndex, selectedAnswer) {
+            switch (questionIndex) {
+                case 0:
+                    return selectedAnswer === 'the_flowers';
+                case 1:
+                    return selectedAnswer === 'the_bath';
+                case 2:
+                    return selectedAnswer === 'Juan_is_eating_apples';
+                case 3:
+                    return selectedAnswer === 'a_bread';
+                case 4:
+                    return selectedAnswer === 'Nisha_eats_fruit';
+                default:
+                    return false;
+            }
+        }
+
+        function showFeedback(question, isCorrect) {
+            const feedback = question.querySelector('.feedback');
+            const nextBtn = question.querySelector('.btn');
+            const correctAnswer = question.querySelector('.correct-answer');
+            const wrongAnswer = question.querySelector('.wrong-answer');
+
+            if (isCorrect) {
+                feedback.style.display = 'block';
+                feedback.querySelector('.correct-answer').textContent = "Correct";
+                feedback.querySelector('.wrong-answer').textContent = "";
+                nextBtn.style.display = 'block';
+            } else {
+                feedback.style.display = 'block';
+                feedback.querySelector('.correct-answer').textContent = "";
+                feedback.querySelector('.wrong-answer').textContent = "Don't worry. Try again!";
+                nextBtn.style.display = 'none';
+            }
+        }
+
+        function displayAppreciation() {
+            const appreciationDiv = document.getElementById('appreciation');
+            appreciationDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanish Language Quiz</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: rgba(65, 64, 70);
+    color: #333;
+}
+h1{
+    color: pink;;
+}
+        .question {
+            margin-bottom: 20px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .feedback {
+            display: none;
+        }
+        .correct-answer {
+            display: none;
+            font-weight: bold;
+            color: green;
+        }
+        .wrong-answer {
+            display: none;
+            font-weight: bold;
+            color: red;
+        }
+        .btn {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.5cm;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s ease;
+    position: absolute;
+    top: 700px;
+    right: 100px;
+}
+.btn:hover {
+    background: black;
+    color: white;
+}
+        .appreciation {
+            display: none;
+            font-weight: bold;
+            color: green;
+            margin-top: 20px;
+        }
+        .continue-btn {
+            display: none;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Spanish Language Quiz</h1>
+    
+    <div class="question" id="question1">
+        <p>The word for "the girl" in Spanish is?</p>
+        <div class="options">
+            <label><input type="radio" name="answer1" value="el_nino"> El Niño</label>
+            <label><input type="radio" name="answer1" value="la_nina"> La Niña</label>
+            <label><input type="radio" name="answer1" value="el_hombre"> El Hombre</label>
+        </div>
+        <div class="feedback">
+            <span class="correct-answer">&#10004; Correct</span>
+            <span class="wrong-answer">&#10006; Wrong</span>
+        </div>
+        <div class="correct-answer">The correct answer is <b>La Niña</b>.</div>
+        <button class="next-btn">Next</button>
+    </div>
+
+    <div class="question" id="question2" style="display: none;">
+        <p>The word for "the man" in Spanish is?</p>
+        <div class="options">
+            <label><input type="radio" name="answer2" value="el_nino"> El Niño</label>
+            <label><input type="radio" name="answer2" value="la_mujer"> La mujer</label>
+            <label><input type="radio" name="answer2" value="el_hombre"> El Hombre</label>
+        </div>
+        <div class="feedback">
+            <span class="correct-answer">&#10004; Correct</span>
+            <span class="wrong-answer">&#10006; Wrong</span>
+        </div>
+        <div class="correct-answer">The correct answer is <b>El Hombre</b>.</div>
+        <button class="next-btn">Next</button>
+    </div>
+
+    <div class="question" id="question3" style="display: none;">
+        <p>The word for "the woman" in Spanish is?</p>
+        <div class="options">
+            <label><input type="radio" name="answer3" value="el_hombre"> El hombre</label>
+            <label><input type="radio" name="answer3" value="la_nina"> La Niña</label>
+            <label><input type="radio" name="answer3" value="la_mujer"> La Mujer</label>
+        </div>
+        <div class="feedback">
+            <span class="correct-answer">&#10004; Correct</span>
+            <span class="wrong-answer">&#10006; Wrong</span>
+        </div>
+        <div class="correct-answer">The correct answer is <b>La Mujer</b>.</div>
+        <button class="next-btn">Next</button>
+    </div>
+
+    <div class="question" id="question4" style="display: none;">
+        <p>The word for "a woman" in Spanish is?</p>
+        <div class="options">
+            <label><input type="radio" name="answer4" value="la_nina"> La Niña</label>
+            <label><input type="radio" name="answer4" value="la_mujer"> La Mujer</label>
+            <label><input type="radio" name="answer4" value="una_mujer"> Una Mujer</label>
+        </div>
+        <div class="feedback">
+            <span class="correct-answer">&#10004; Correct</span>
+            <span class="wrong-answer">&#10006; Wrong</span>
+        </div>
+        <div class="correct-answer">The correct answer is <b>Una Mujer</b>.</div>
+        <button class="next-btn">Next</button>
+    </div>
+
+    <div class="question" id="question5" style="display: none;">
+        <p>The word for "a man" in Spanish is?</p>
+        <div class="options">
+            <label><input type="radio" name="answer5" value="el_nino"> El Niño</label>
+            <label><input type="radio" name="answer5" value="la_nina"> La Niña</label>
+            <label><input type="radio" name="answer5" value="un_hombre"> Un Hombre</label>
+        </div>
+        <div class="feedback">
+            <span class="correct-answer">&#10004; Correct</span>
+            <span class="wrong-answer">&#10006; Wrong</span>
+        </div>
+        <div class="correct-answer">The correct answer is <b>Un Hombre</b>.</div>
+        <button class="next-btn">Next</button>
+    </div>
+
+    <div class="appreciation" id="appreciation" style="display: none;">
+        <p>Hurray! You did well. Continue to the next level.</p>
+        <button class="continue-btn">Continue to Next Level</button>
+    </div>
+
+    <script>
+        const questions = document.querySelectorAll('.question');
+        const nextBtns = document.querySelectorAll('.next-btn');
+        const appreciationDiv = document.getElementById('appreciation');
+        const continueBtn = document.querySelector('.continue-btn');
+
+        let currentQuestionIndex = 0;
+
+        questions[currentQuestionIndex].style.display = 'block';
+
+        nextBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const currentQuestion = questions[currentQuestionIndex];
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    currentQuestion.style.display = 'none';
+                    questions[currentQuestionIndex].style.display = 'block';
+                } else {
+                    currentQuestion.style.display = 'none';
+                    appreciationDiv.style.display = 'block';
+                }
+            });
+        });
+
+        // Event listeners for radio buttons and showing feedback
+        const radioButtons = document.querySelectorAll('input[type="radio"]');
+        radioButtons.forEach(button => {
+            button.addEventListener('change', () => {
+                const currentQuestion = questions[currentQuestionIndex];
+                const selectedAnswer = currentQuestion.querySelector('input[name="answer' + (currentQuestionIndex + 1) + '"]:checked').value;
+                const correctAnswer = selectedAnswer === 'la_nina' || selectedAnswer === 'el_hombre' || selectedAnswer === 'la_mujer' || selectedAnswer === 'una_mujer' || selectedAnswer === 'un_hombre';
+                showFeedback(currentQuestion, correctAnswer);
+            });
+        });
+
+        function showFeedback(question, isCorrect) {
+            const feedback = question.querySelector('.feedback');
+            const nextBtn = question.querySelector('.next-btn');
+            const correctAnswer = question.querySelector('.correct-answer');
+            const wrongAnswer = question.querySelector('.wrong-answer');
+
+            if (isCorrect) {
+                feedback.style.display = 'block';
+                feedback.querySelector('.correct-answer').style.display = 'inline';
+                feedback.querySelector('.wrong-answer').style.display = 'none';
+                nextBtn.style.display = 'block';
+            } else {
+                feedback.style.display = 'block';
+                feedback.querySelector('.correct-answer').style.display = 'none';
+                feedback.querySelector('.wrong-answer').style.display = 'inline';
+                nextBtn.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

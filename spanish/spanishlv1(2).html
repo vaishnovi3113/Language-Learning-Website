@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanish Language Learning</title>
+    <link rel="stylesheet" href="spanishlv1(1).css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: rgba(65, 64, 70);
+    color: #333;
+}
+#h1{
+    color:pink;
+}
+h2 {
+    color: #fff;
+    position: absolute;
+    top: 285px;
+    left: 590px;
+}
+
+.audiocontainer {
+    position: absolute;
+    top:14px;
+    left:38px;
+    width:85%;
+}
+.box {
+    height: 5rem;
+    width: 32%;
+    display: flex;
+    position: absolute;
+    top: 350px;
+    left: 490px;
+    background-color: pink;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem black;
+}
+.image {
+    height: 100%;
+    width: 25%;
+}
+.image img {
+    height: 5rem;
+    width: 20%;
+    border-radius: 10px;
+    position: absolute;
+    left: 0px;
+}
+.btn {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.5cm;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s ease;
+    position: absolute;
+    top: 700px;
+    right: 100px;
+}
+.btn:hover {
+    background: black;
+    color: white;
+}
+.word {
+    display: none;
+}
+.word.active {
+    display: block;
+}
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+    <h1 id="h1">Basic Spanish Words</h1>
+    <div class="word active" id="elthe">
+        <h2 >El - The (Used for Boy)</h2>
+        <div>
+            <div class="box">
+                <audio class="audiocontainer" controls>
+                    <source src="/Users/vaishu/Desktop/project/audio/the.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+        <button class="btn" onclick="showWord('la')">Next</button>
+    </div>
+    <div class="word" id="la">
+        <h2 >La - The (Used for Girl)</h2>
+        <div class="box">
+            <audio class="audiocontainer"controls>
+              <source src="/Users/vaishu/Desktop/project/audio/la-the.mp3" type="audio/mpeg">
+            </audio>
+      </div>  
+      <button class="btn" onclick="showWord('una')">Next</button> 
+    </div>
+    <div class="word" id="una">
+        <h2>Una - A (Used for Woman)</h2>
+        <div class="box">
+        <audio class="audiocontainer"controls>
+            <source src="/Users/vaishu/Desktop/project/audio/una-a.mp3" type="audio/mpeg">
+        </audio>
+        </div>
+        <button class="btn" onclick="showWord('un')">Next</button>
+    </div>
+    <div class="word" id="un">
+        <h2>Un - A (Used for Man)</h2>
+        <div class="box">
+        <audio class="audiocontainer" controls>
+            <source src="/Users/vaishu/Desktop/project/audio/un-a.mp3" type="audio/mpeg">
+        </audio>
+        </div>
+        <button class="btn" onclick="showWord('yo')">Next</button>
+    </div>
+    <div class="word" id="yo">
+        <h2>Yo - ' I '</h2>
+        <div class="box">
+        <audio class="audiocontainer" controls>
+            <source src="/Users/vaishu/Desktop/project/audio/yo-i.mp3" type="audio/mpeg">
+        </audio>
+        </div>
+        <a href="continue.html">
+        <button class="btn">Continue</button></a>
+    </div>
+    <script>
+        let currentWordIndex = 0;
+        const words = document.querySelectorAll('.word');
+
+        function showWord(word) {
+            words[currentWordIndex].classList.remove('active');
+            document.getElementById(word).classList.add('active');
+            currentWordIndex++;
+        }
+    </script>
+</body>
+</html>
