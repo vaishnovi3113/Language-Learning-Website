@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italian Language Quiz</title>
+    <style>
+        p {
+            font-size: 30px;
+            color: beige;
+        }
+        
+        h1 {
+            color: pink;
+            position: absolute;
+            top: 30px;
+            left: 525px;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: rgba(65, 64, 70);
+            color: #333;
+        }
+        
+        .question {
+            width: 450px;
+            height: 440px;
+            position: absolute;
+            top: 200px;
+            left: 452px;
+            padding: 20px;
+            border: 2px solid #000000;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 3px 20px pink;
+        }
+        
+        .option {
+            margin-top: 15px;
+            color: beige;
+            border: 2px solid #000000;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        
+        .option label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .option:hover {
+            border-color: rgb(251, 214, 220);
+        }
+        
+        input[type="radio"] {
+            display: none;
+        }
+        
+        input[type="radio"] + label {
+            cursor: pointer;
+        }
+        
+        input[type="radio"]:checked + label {
+            font-weight: bold;
+        }
+        
+        .feedback {
+            display: none;
+        }
+        
+        .correct-answer {
+            display: none;
+            font-weight: bold;
+            color: green;
+        }
+        
+        .wrong-answer {
+            display: none;
+            font-weight: bold;
+            color: red;
+        }
+        
+        .appreciation {
+            display: none;
+            font-weight: bold;
+            color: green;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            width: 130px;
+            height: 50px;
+            background: transparent;
+            border: 2px solid black;
+            outline: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.5cm;
+            font-weight: 500;
+            margin-left: 40px;
+            transition: 0.5s ease;
+            position: absolute;
+            top: 410px;
+            right: 15px;
+        }
+        
+        .btn:hover {
+            background: rgb(27, 27, 27);
+            color: beige;
+        }
+    </style>
+</head>
+<body>
+    <h1> Italian Language Quiz</h1>
+    
+    <div class="question" id="question1">
+        <p>The Sentence for "hello! an icecream please" is?</p>
+        <div class="options">
+            <div class="option" onclick="selectRadio(this, 'answer1')">
+                <label><input type="radio" name="answer1" value=" Salve! Un gelato, per favore">  Salve! Un gelato, per favore</label>
+            </div>
+            <div class="option" onclick="selectRadio(this, 'answer1')">
+                <label><input type="radio" name="answer1" value="Salve per favore Un gelato "> Salve per favore Un gelato</label>
+            </div>
+            <div class="option" onclick="selectRadio(this, 'answer1')">
+                <label><input type="radio" name="answer1" value=" Un gelato perfavore Salve"> Un gelato perfavore Salve </label>
+            </div>
+        </div>
+        <div class="feedback">
+            <span class="wrong-answer">&#10006; Wrong</span>
+            <span class="correct-answer">&#10004; Correct</span>
+        </div>
+        <div class="correct-answer">The correct answer is <b> Salve! Un gelato, per favore</b>.</div>
+        <button class="btn">Next</button>
+    </div>
+
+    <div class="question" id="question2" style="display: none;">
+        <p>The word for "Hello Beautiful" is?</p>
+        <div class="options">
+            <div class="option" onclick="selectRadio(this, 'answer2')">
+                <label><input type="radio" name="answer2" value="Bella ciao"> Bella ciao</label>
+            </div>
+            <div class="option" onclick="selectRadio(this, 'answer2')">
+                <label><input type="radio" name="answer2" value="Ciao bella"> Ciao bella</label>
+            </div>
+            <div class="option" onclick="selectRadio(this, 'answer2')">
+                <label><input type="radio" name="answer2" value="CIAO bella ">CIAO bella</label>
+            </div>
+        </div>
+        <div class="feedback">
+            <span class="wrong-answer">&#10006; Wrong</span>
+            <span class="correct-answer">&#10004; Correct</span>
+        </div>
+        <div class="correct-answer">The correct answer is <b>Ciao bella</b>.</div>
+        <button class="btn">Next</button>
+    </div>
+
+    <div class="question" id="question3" style="display: none;">
+        <p>The word for "can you come ?" is?</p>
+        <div class="options">
+            <div class="option" onclick="selectRadio(this, 'answer3')">
+                <label><input type="radio" name="answer3" value="venire puoi?"> venire puoi?</label>
+            </div>
+            <div class="option" onclick="selectRadio(this, 'answer3')">
+                <label><input type="radio" name="answer3" value="grazie,piacere?">grazie,piacere? </label>
+            </div>
+            <div class="option" onclick="selectRadio(this, 'answer3')">
+                <label><input type="radio" name="answer3" value="Puoi venire ?"> Puoi venire ?</label>
+            </div>
+        </div>
+        <div class="feedback">
+            <span class="wrong-answer">&#10006; Wrong</span>
+            <span class="correct-answer">&#10004; Correct</span>
+        </div>
+        <div class="correct-answer">The correct answer is <b>Puoi venire ?</b>.</div>
+        <button class="btn">Next</button>
+    </div>
+    
+    <div class="question" id="question4" style="display: none;">
+        <p>How do you say "Goodbye" in Italian?</p>
+        <div class="options">
+            <div class="option" onclick="selectRadio(this, 'answer4')">
+                <label><input type="radio" name="answer4" value="Ciao"> Ciao</label>
+            </div>
+            <div class="option" onclick="selectRadio(this, 'answer4')">
+                <label><input type="radio" name="answer4" value="Buona sera"> Buona sera</label>
+            </div>
+            <div class="option" onclick="selectRadio(this, 'answer4')">
+                <label><input type="radio" name="answer4" value="Arrivederci"> Arrivederci</label>
+            </div>
+        </div>
+        <div class="feedback">
+            <span class="wrong-answer">&#10006; Wrong</span>
+            <span class="correct-answer">&#10004; Correct</span>
+        </div>
+        <div class="correct-answer">The correct answer is <b>Arrivederci</b>.</div>
+        <a href="italianlvs.html">
+            <button class="btn">Continue</button></a>
+    </div>
+    
+    <!-- Add more questions here -->
+
+    <div id="appreciation" class="appreciation">
+        <h2>Congratulations!</h2>
+        <p>You have completed the quiz.</p>
+        <button class="continue-btn" onclick="continueToNextLevel()">Continue to Next Level</button>
+    </div>
+
+    <script>
+        const questions = document.querySelectorAll('.question');
+        const nextBtns = document.querySelectorAll('.btn');
+        let currentQuestionIndex = 0;
+
+        questions[currentQuestionIndex].style.display = 'block';
+
+        nextBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const currentQuestion = questions[currentQuestionIndex];
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    currentQuestion.style.display = 'none';
+                    questions[currentQuestionIndex].style.display = 'block';
+                } else {
+                    currentQuestion.style.display = 'none';
+                    document.getElementById('appreciation').style.display = 'block';
+                }
+            });
+        });
+
+        function selectRadio(option, answer) {
+            const currentQuestion = option.closest('.question');
+            currentQuestion.querySelectorAll('input[name="' + answer + '"]').forEach(radio => {
+                radio.checked = false;
+            });
+            option.querySelector('input').checked = true;
+            
+            const selectedAnswer = option.querySelector('input').value;
+            const correctAnswer = selectedAnswer.trim() === currentQuestion.querySelector('.correct-answer b').textContent.trim();
+            showFeedback(currentQuestion, correctAnswer);
+        }
+        
+        function continueToNextLevel() {
+            // Redirect or perform next level action
+        }
+        
+        function showFeedback(question, isCorrect) {
+            const feedback = question.querySelector('.feedback');
+            const nextBtn = question.querySelector('.btn');
+
+            if (isCorrect) {
+                feedback.style.display = 'block';
+                feedback.querySelector('.correct-answer').style.display = 'inline';
+                feedback.querySelector('.wrong-answer').style.display = 'none';
+                nextBtn.style.display = 'block';
+            } else {
+                feedback.style.display = 'block';
+                feedback.querySelector('.correct-answer').style.display = 'none';
+                feedback.querySelector('.wrong-answer').style.display = 'inline';
+                nextBtn.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
