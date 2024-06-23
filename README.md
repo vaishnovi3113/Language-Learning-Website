@@ -11,6 +11,23 @@
 <img width="1440" alt="Screenshot 2024-06-23 at 9 31 10 AM" src="https://github.com/vaishnovi3113/Language-Learning-Website/assets/144097894/7974198d-637e-4dca-801c-ad3452ef5883">
 
 <img width="1440" alt="Screenshot 2024-06-23 at 9 31 39 AM" src="https://github.com/vaishnovi3113/Language-Learning-Website/assets/144097894/1538f2e7-f8c5-4b10-af6c-405af064cc65">
-<img width="1440" alt="Screenshot 2024-06-23 at 9 32 29 AM" src="https://github.com/vaishnovi3113/Language-Learning-Website/assets/14409789<img width="1440" alt="Screenshot 2024-06-23 at 10 57 48 AM" src="https://github.com/vaishnovi3113/Language-Learning-Website/assets/144097894/82a28e02-a4be-430a-b70f-b3f874a7ceda">
-4/ae82ed2c-7b8f-4413-968f-d7c0ce6b74a1">
+
+
+<img width="1440" alt="Screenshot 2024-06-23 at 10 57 48 AM" src="https://github.com/vaishnovi3113/Language-Learning-Website/assets/144097894/a4c31e4d-9000-4a82-b096-1cbcafa4a461">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
