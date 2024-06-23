@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dutch Language Learning</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: rgba(65, 64, 70);
+    color: #333;
+}
+#h1 {
+    color: pink;
+}
+h2 {
+    color: #fff;
+    position: absolute;
+    top: 150px;
+    left: 670px;
+}
+.audiocontainer {
+    position: absolute;
+    top:15px;
+    left:152px;
+    width:78%;
+}
+.box {
+    height: 5rem;
+    width: 50%;
+    display: flex;
+    position: absolute;
+    top: 350px;
+    left: 390px;
+    background-color: pink;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem black;
+}
+.image {
+    height: 100%;
+    width: 25%;
+}
+.image img {
+    height: 5rem;
+    width: 20%;
+    border-radius: 10px;
+    position: absolute;
+    left: 0px;
+}
+.btn {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.5cm;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s ease;
+    position: absolute;
+    top: 700px;
+    right: 100px;
+}
+.btn:hover {
+    background: black;
+    color: white;
+}
+.word {
+    display: none;
+}
+.word.active {
+    display: block;
+}
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <h1 id="h1">Basic Dutch Words</h1>
+    <div class="word active" id="hello">
+        <h2>Gezond - healthy</h2>
+        <div>
+            <div class="box">
+                <div class="image">
+                    <img src="https://imageio.forbes.com/specials-images/imageserve/63b6dbc1b64d967f5ee8003d/Healthy-eating--exercising--weight-and-blood-pressure-control/960x0.jpg?format=jpg&width=960" alt="">
+                </div>
+                <audio class="audiocontainer" controls>
+                    <source src="#" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+        <button class="btn" onclick="showWord('girl')">Next</button>
+    </div>
+    <div class="word" id="girl">
+        <h2 >Gekruid / Heet - spicy</h2>
+        <div class="box">
+          <div class="image">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/carolina-reaper-fresh-red-chilli-pepper-in-fire-as-royalty-free-image-1694709298.jpg?crop=0.74981xw:1xh;center,top&resize=640:*" alt="">
+            <audio class="audiocontainer"controls>
+              <source src="#" type="audio/mpeg">
+            </audio>
+        </div>
+      </div>  
+      <button class="btn" onclick="showWord('boy')">Next</button> 
+    </div>
+    <div class="word" id="boy">
+        <h2 >Fototoestel - camera</h2>
+        <div class="box">
+          <div class="image">
+              <img src="https://m.media-amazon.com/images/I/61+5Ld-oc1L._AC_UF1000,1000_QL80_DpWeblab_.jpg" alt="">
+        <audio class="audiocontainer"controls>
+            <source src="#" type="audio/mpeg">
+        </audio>
+        </div>
+        </div>
+        <button class="btn" onclick="showWord('woman')">Next</button>
+    </div>
+    <div class="word" id="woman">
+        <h2 >Love / Liefde</h2>
+        <div class="box">
+          <div class="image">
+              <img src="https://images.theconversation.com/files/122137/original/image-20160511-18171-kulas4.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=926&fit=clip" alt="">
+        <audio class="audiocontainer" controls>
+            <source src="/#" type="audio/mpeg">
+        </audio>
+        </div>
+        </div>
+        <button class="btn" onclick="showWord('man')">Next</button>
+    </div>
+    <div class="word" id="man">
+        <h2 >vriend - friend</h2>
+        <div class="box">
+          <div class="image">
+              <img src="https://www.shutterstock.com/image-vector/little-kid-hug-best-friend-600nw-2168332329.jpg" alt="">
+        <audio class="audiocontainer" controls>
+            <source src="" type="audio/mpeg">
+        </audio>
+        </div>
+        </div>
+        <a href="continuedutch.html">
+        <button class="btn">Continue</button></a>
+    </div>
+    <script>
+        let currentWordIndex = 0;
+        const words = document.querySelectorAll('.word');
+
+        function showWord(word) {
+            words[currentWordIndex].classList.remove('active');
+            document.getElementById(word).classList.add('active');
+            currentWordIndex++;
+        }
+    </script>
+</body>
+</html>
