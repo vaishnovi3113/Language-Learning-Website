@@ -1,4 +1,5 @@
 # VERBVAULT
+Welcome to VerVault, your ultimate destination for mastering new languages with ease and confidence. At VerbVault, we believe that learning a new language is more than just acquiring a skill—it's a gateway to new cultures, experiences, and opportunities.
 
 <img width="1440" alt="Screenshot 2024-06-23 at 9 29 24 AM" src="https://github.com/vaishnovi3113/Language-Learning-Website/assets/144097894/42bbdc1f-d772-4c6f-95be-8b3cc1fd91a2">
 
