@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French Language Learning</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: rgba(65, 64, 70);
+    color: #333;
+}
+#h1 {
+    color: pink;
+}
+h2 {
+    color: #fff;
+    position: absolute;
+    top: 150px;
+    left: 670px;
+}
+.audiocontainer {
+    position: absolute;
+    top:15px;
+    left:152px;
+    width:78%;
+}
+.box {
+    height: 5rem;
+    width: 50%;
+    display: flex;
+    position: absolute;
+    top: 350px;
+    left: 390px;
+    background-color: pink;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem black;
+}
+.image {
+    height: 100%;
+    width: 25%;
+}
+.image img {
+    height: 5rem;
+    width: 20%;
+    border-radius: 10px;
+    position: absolute;
+    left: 0px;
+}
+.btn {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.5cm;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s ease;
+    position: absolute;
+    top: 700px;
+    right: 100px;
+}
+.btn:hover {
+    background: black;
+    color: white;
+}
+.word {
+    display: none;
+}
+.word.active {
+    display: block;
+}
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <h1 id="h1">Basic French Words</h1>
+    <div class="word active" id="hello">
+        <h2>Bonsoir-Good evening</h2>
+        <div>
+            <div class="box">
+                <div class="image">
+                    <img src="https://imgs.search.brave.com/uiaeUffaoLYftK2GcXIHQk8DKhnPZUIzcHxujwyR2hg/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/MzQyNzEwNTcyMzgt/YzJjMTcwYTc2Njcy/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4TVRsOGZH/VjJaVzVwYm1kOFpX/NThNSHg4TUh4OGZE/QT0.jpeg" alt="">
+                </div>
+                <audio class="audiocontainer" controls>
+                    <source src="Bonsoir audio.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+        <button class="btn" onclick="showWord('girl')">Next</button>
+    </div>
+    <div class="word" id="girl">
+        <h2 >Je ne sais pas-I don't know</h2>
+        <div class="box">
+          <div class="image">
+            <img src="https://imgs.search.brave.com/WpFBx6WzQEkEtPPBSfd2RHN6OUOXHzQMHOC2fhMKkxw/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2xpcGFydG1heC5j/b20vcG5nL21pZGRs/ZS80NjUtNDY1OTc2/MV9pLWRvbnQta25v/dy1pZGstY2FydG9v/bi5wbmc" alt="">
+            <audio class="audiocontainer"controls>
+              <source src="Je ne sais pas audio.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+      </div>  
+      <button class="btn" onclick="showWord('boy')">Next</button> 
+    </div>
+    <div class="word" id="boy">
+        <h2 >Ça va-How are you?</h2>
+        <div class="box">
+          <div class="image">
+              <img src="https://imgs.search.brave.com/mHds4co5j94UQEVbmxZTVqyh53V4704Pkut1kDRyjEQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/YXNraWRlYXMuY29t/L21lZGlhLzExL0hv/dy1BcmUtWW91LUNv/bW1lbnQuanBn" alt="">
+        <audio class="audiocontainer"controls>
+            <source src="ça va audio.mp3" type="audio/mpeg">
+        </audio>
+        </div>
+        </div>
+        <button class="btn" onclick="showWord('woman')">Next</button>
+    </div>
+    <div class="word" id="woman">
+        <h2 >Toi-You</h2>
+        <div class="box">
+          <div class="image">
+              <img src="https://imgs.search.brave.com/DdCStr37j3M3vwWNnxfeasJog1tIeE6MR406lqseZgs/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vdGh1bWIv/Yy9jMS9Zb3VfKFRW/X3NlcmllcylfaW50/ZXJ0aXRsZS5wbmcv/MjIwcHgtWW91XyhU/Vl9zZXJpZXMpX2lu/dGVydGl0bGUucG5n" alt="">
+        <audio class="audiocontainer" controls>
+            <source src="Toi audio.mp3" type="audio/mpeg">
+        </audio>
+        </div>
+        </div>
+        <button class="btn" onclick="showWord('man')">Next</button>
+    </div>
+    <div class="word" id="man">
+        <h2 >Je-I</h2>
+        <div class="box">
+          <div class="image">
+              <img src="https://imgs.search.brave.com/z0zAX3vSVOEydnPPh9bPd35sKyi-B1aFJJmE7xdVxnM/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNTEz/MzIwNjg1L3Bob3Rv/L2ktbG92ZS1teS1q/b2IuanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPU5Wc1dwVE1T/Qlpaal9ET3N2RUNy/OTZtcHRBd1FTZkpP/aVg4Zlh2VUdBQTQ9" alt="">
+        <audio class="audiocontainer" controls>
+            <source src="Je audio.mp3" type="audio/mpeg">
+        </audio>
+        </div>
+        </div>
+        <a href="frenchlvs.html">
+        <button class="btn">Continue</button></a>
+    </div>
+    <script>
+        let currentWordIndex = 0;
+        const words = document.querySelectorAll('.word');
+
+        function showWord(word) {
+            words[currentWordIndex].classList.remove('active');
+            document.getElementById(word).classList.add('active');
+            currentWordIndex++;
+        }
+    </script>
+</body>
+</html>
