@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean Language Learning</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: rgba(65, 64, 70);
+    color: #333;
+}
+#h1 {
+    color: pink;
+}
+h2 {
+    color: #fff;
+    position: absolute;
+    top: 150px;
+    left: 570px;
+}
+p{
+    text-align: center;
+     font-size: 20px;
+     color: white;
+ }
+.audiocontainer {
+    position: absolute;
+    top:15px;
+    left:152px;
+    width:78%;
+}
+.box {
+    height: 5rem;
+    width: 50%;
+    display: flex;
+    position: absolute;
+    top: 350px;
+    left: 390px;
+    background-color: pink;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem black;
+}
+.image {
+    height: 100%;
+    width: 25%;
+}
+.image img {
+    height: 5rem;
+    width: 20%;
+    border-radius: 10px;
+    position: absolute;
+    left: 0px;
+}
+.btn {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.5cm;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s ease;
+    position: absolute;
+    top: 700px;
+    right: 100px;
+}
+.btn:hover {
+    background: black;
+    color: white;
+}
+.word {
+    display: none;
+}
+.word.active {
+    display: block;
+}
+
+    </style>
+</head>
+<body>
+    <h1 id="h1">Basic Korean Words</h1>
+    <div class="word active" id="hello">
+        <h2>안녕하세요-Annyeonghaseyo-Hello in formal</h2><br>
+        
+        <div>
+            <div class="box">
+                <div class="image">
+                    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTAzMjJfOTQg%2FMDAxNjE2NDA2MDcyNzY3.nb3pBLtRRcORiPmEk52fFSXHoAdIsBwcE76XfXUdZi4g.w9jHhZMztKRvq8FEAqKbLoPxUnpwmYMHFwNKrmOpftQg.JPEG.yomian%2F1616406049173.jpg&type=a340" alt="">
+                </div>
+                <audio class="audiocontainer" controls>
+                    <source src="annyeonghaseyo audio.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+           
+        </div>
+        <button class="btn" onclick="showWord('girl')">Next</button>
+    </div>
+          
+    <div class="word" id="girl">
+        <h2 >안녕히 계세요-annyeonghi gyeseyo-Good bye</h2>
+        <div class="box">
+          <div class="image">
+            <img src="https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/DLs/image/KYwD1TQLozn5VAK7fUOV3aOe7Ak.PNG" alt="">
+            <audio class="audiocontainer"controls>
+              <source src="annyeonghigaseyo audio.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+      </div>  
+      <button class="btn" onclick="showWord('boy')">Next</button> 
+    </div>
+    <div class="word" id="boy">
+        <h2 >감사합니다-gamsahamnida-Thank You</h2>
+        <div class="box">
+          <div class="image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrtsY7-68_rFTx-m8uB2AVYn1BNv6KG8LmWVuW6MvyXA&s" alt="">
+        <audio class="audiocontainer"controls>
+            <source src="gamsahamnida audio.mp3" type="audio/mpeg">
+
+        </audio>
+       
+        </div>
+        </div>
+        <button class="btn" onclick="showWord('woman')">Next</button>
+    </div>
+    <div class="word" id="woman">
+        <h2 >잘 지냈어요?-jal jinaesseoyo?-How are You?</h2>
+        <div class="box">
+          <div class="image">
+              <img src="https://previews.123rf.com/images/leonart/leonart1704/leonart170400163/76564621-%EC%9E%98-%EC%A7%80%EB%83%88%EC%96%B4%EC%9A%94-%EC%97%B0%EC%84%A4-%EA%B1%B0%ED%92%88-%EC%B9%B4%EB%93%9C%EC%9E%85%EB%8B%88%EB%8B%A4.jpg" alt="">
+        <audio class="audiocontainer" controls>
+            <source src="jaljinaesseoyo.mp3" type="audio/mpeg">
+        </audio>
+       
+        </div>
+        </div>
+        <button class="btn" onclick="showWord('man')">Next</button>
+    </div>
+    <div class="word" id="man">
+        <h2 >죄송합니다-joesonghamnida-Sorry</h2>
+        <div class="box">
+          <div class="image">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBGNsHOacK7tAqLro7MamTEn8CP32HtIb3XzP7djqt_A&s" alt="">
+        <audio class="audiocontainer" controls>
+            <source src="joesonghamnida audio.mp3" type="audio/mpeg">
+        </audio>
+        
+        </div>
+        </div>
+        <a href="koreanlvs.html">
+        <button class="btn">Continue</button></a>
+    </div>
+    <script>
+        let currentWordIndex = 0;
+        const words = document.querySelectorAll('.word');
+
+        function showWord(word) {
+            words[currentWordIndex].classList.remove('active');
+            document.getElementById(word).classList.add('active');
+            currentWordIndex++;
+        }
+    </script>
+</body>
+</html>

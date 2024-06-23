@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean Language Quiz</title>
+    <style>
+        p{
+            font-size: 30px;
+            color:beige
+        }
+        h1{
+            color:pink;
+            position: absolute;
+            top:30px;
+            left:525px;
+        }
+         body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: rgba(65, 64, 70);
+    color: #333;
+    }
+    .question {
+    width: 450px;
+    height:440px;
+    position: absolute;
+    top:200px;
+    left:452px;
+    padding: 20px;
+    border: 2px solid #000000; 
+    border-radius: 10px; 
+    text-align: center; 
+    box-shadow: 0px 3px 20px pink; 
+    }
+   .option{
+    margin-top: 15px;
+    color:beige;
+   }
+    .option {
+    border: 2px solid #000000;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+        .option label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .option:hover {
+    border-color: rgb(251, 214, 220);
+}
+
+   input[type="radio"] {
+    display: none;
+}
+
+   input[type="radio"] + label {
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+    font-weight: bold;
+}
+        .feedback {
+            display: none;
+        }
+        .correct-answer {
+            display: none;
+            font-weight: bold;
+            color: green;
+        }
+        .wrong-answer {
+            display: none;
+            font-weight: bold;
+            color: red;
+        }
+        .appreciation {
+            display: none;
+            font-weight: bold;
+            color: green;
+            margin-top: 20px;
+        }
+        .btn {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.5cm;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s ease;
+    position: absolute;
+    top: 410px;
+    right: 15px;
+   }
+   .btn:hover {
+    background: rgb(27, 27, 27);
+    color:beige;
+   }
+   
+    </style>
+</head>
+<body>
+    <h1>Korean Language Quiz</h1>
+    
+    <div class="question" id="question1">
+        <p>How do you say "I don't know"?</p>
+        <div class="options">
+            <div class="option" onclick="selectRadio('answer1')">
+            <label><input type="radio" name="answer1" value="0">천만에요 (cheonmaneyo)</label>
+        </div>
+            <div class="option" onclick="selectRadio('answer1')">
+            <label><input type="radio" name="answer1" value="0">저기요 (jeogiyo)</label>
+        </div>
+            <div class="option" onclick="selectRadio('answer1')">
+            <label><input type="radio" name="answer1" value="1">몰라요 (mollayo)</label>
+        </div>
+        </div>
+        <div class="feedback">
+            <span class="wrong-answer">&#10006; Wrong</span>
+            <span class="correct-answer">&#10004; Correct</span>
+        </div>
+        <div class="correct-answer">The correct answer is <b>몰라요 (mollayo)</b>.</div>
+        <button class="btn">Next</button>
+    </div>
+
+    <div class="question" id="question2" style="display: none;">
+        <p>Word for "I know"?</p>
+        <div class="options">
+            <div class="option" onclick="selectRadio('answer1')">
+            <label><input type="radio" name="answer2" value="0">네(ne)</label>
+        </div>
+            <div class="option" onclick="selectRadio('answer1')">
+            <label><input type="radio" name="answer2" value="1">알아요 (arayo)</label>
+        </div>
+            <div class="option" onclick="selectRadio('answer1')">
+            <label><input type="radio" name="answer2" value="0">저기요 (jeogiyo)</label>
+        </div>
+        </div>
+        <div class="feedback">
+            <span class="correct-answer">&#10004; Correct</span>
+            <span class="wrong-answer">&#10006; Wrong</span>
+        </div>
+        <div class="correct-answer">The correct answer is <b>알아요 (arayo)</b>.</div>
+        <button class="btn">Next</button>
+    </div>
+
+    <div class="question" id="question3" style="display: none;">
+        <p>what does "천만에요 (cheonmaneyo)" mean?</p>
+        <div class="options" onclick="selectRadio('answer1')">
+            <div class="option">
+            <label><input type="radio" name="answer3" value="1">You're welcome</label>
+        </div>
+            <div class="option" onclick="selectRadio('answer1')">
+            <label><input type="radio" name="answer3" value="0">This</label>
+        </div>
+            <div class="option" onclick="selectRadio('answer1')">
+            <label><input type="radio" name="answer3" value="0">Good morning</label>
+        </div>
+        </div>
+        <div class="feedback">
+            <span class="wrong-answer">&#10006; Wrong</span>
+            
+            <span class="correct-answer">&#10004; Correct</span>
+        </div>
+        <div class="correct-answer">The correct answer is <b>You're welcome</b>.</div>
+        <button class="btn">Next</button>
+    </div>
+
+    <div class="question" id="question4" style="display: none;">
+        <p>The word for "Not good" is?</p>
+        <div class="options">
+            <div class="option" onclick="selectRadio('answer1')">
+            <label><input type="radio" name="answer4" value="0">네(ne)</label>
+        </div>
+            <div class="option" onclick="selectRadio('answer1')">
+            <label><input type="radio" name="answer4" value="0">이거(igeo)</label>
+        </div>
+            <div class="option" onclick="selectRadio('answer1')">
+            <label><input type="radio" name="answer4" value="1">안 좋아요 (an johayo)</label>
+        </div>
+        </div>
+        <div class="feedback">
+            <span class="correct-answer">&#10004; Correct</span>
+            <span class="wrong-answer">&#10006; Wrong</span>
+        </div>
+        <div class="correct-answer">The correct answer is <b>안 좋아요 (an johayo)</b>.</div>
+        <button class="btn">Next</button>
+    </div>
+
+    <div class="question" id="question5" style="display: none;">
+        <p>what does "좋아요 (johayo)" translates?</p>
+        <div class="options">
+            <div class="option" onclick="selectRadio('answer1')">
+            <label><input type="radio" name="answer5" value="1">Good</label>
+        </div>
+            <div class="option" onclick="selectRadio('answer1')">
+            <label><input type="radio" name="answer5" value="0">No</label>
+        </div>
+            <div class="option" onclick="selectRadio('answer1')">
+            <label><input type="radio" name="answer5" value="0">Yes</label>
+        </div>
+        </div>
+        <div class="feedback">
+            <span class="wrong-answer">&#10006; Wrong</span>
+            <span class="correct-answer">&#10004; Correct</span>
+        </div>
+        <div class="correct-answer">The correct answer is <b>Good</b>.</div>
+        <a href="koreanlvs.html">
+            <button class="btn">Continue</button></a>
+    </div>
+
+ 
+
+    <script>
+        const questions = document.querySelectorAll('.question');
+        const nextBtns = document.querySelectorAll('.btn');
+        const appreciationDiv = document.getElementById('appreciation');
+        const continueBtn = document.querySelector('.c-btn');
+
+        let currentQuestionIndex = 0;
+
+        questions[currentQuestionIndex].style.display = 'block';
+
+        nextBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const currentQuestion = questions[currentQuestionIndex];
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    currentQuestion.style.display = 'none';
+                    questions[currentQuestionIndex].style.display = 'block';
+                } else {
+                    currentQuestion.style.display = 'none';
+                    appreciationDiv.style.display = 'block';
+                }
+            });
+        });
+
+        // Event listeners for radio buttons and showing feedback
+        const radioButtons = document.querySelectorAll('input[type="radio"]');
+        radioButtons.forEach(button => {
+            button.addEventListener('change', () => {
+                const currentQuestion = questions[currentQuestionIndex];
+                const selectedAnswer = currentQuestion.querySelector('input[name="answer' + (currentQuestionIndex + 1) + '"]:checked').value;
+                const correctAnswer = selectedAnswer === '1';
+                showFeedback(currentQuestion, correctAnswer);
+            });
+        });
+
+        function showFeedback(question, isCorrect) {
+            const feedback = question.querySelector('.feedback');
+            const nextBtn = question.querySelector('.btn');
+            const correctAnswer = question.querySelector('.correct-answer');
+            const wrongAnswer = question.querySelector('.wrong-answer');
+
+            if (isCorrect) {
+                feedback.style.display = 'block';
+                feedback.querySelector('.correct-answer').style.display = 'inline';
+                feedback.querySelector('.wrong-answer').style.display = 'none';
+                nextBtn.style.display = 'block';
+            } else {
+                feedback.style.display = 'block';
+                feedback.querySelector('.correct-answer').style.display = 'none';
+                feedback.querySelector('.wrong-answer').style.display = 'inline';
+                nextBtn.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
