@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visited Circles with Path</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    #h2{
+    font-family:chalkduster;
+    font-size: 1.2cm;
+    color:pink;
+    user-select: none;
+    margin-left: 1px;
+    margin-top: 10px;
+}
+  .larger-star {
+    font-size: 7em; 
+    color: #000000;
+    background-color:#919191;
+    display: inline-flex;
+    margin: 20px;
+    cursor: pointer;
+    position: relative;
+    border-radius: 30px;
+    box-shadow: 5px 10px 10px rgba(5, 5, 5, 0.9);
+  }
+  body {
+    background-color:rgba(65 64 70)
+  }
+  
+  .container {
+    display: flex;
+    justify-content:space-around; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 30vh; /* Set container height to full viewport height */
+  }
+  .visited {
+    background-color: rgb(219, 155, 165) !important;
+  }
+  .unit2-blur, .unit3-blur {
+    filter: blur(10px); /* Apply blur effect */
+    pointer-events: none; /* Disable mouse events */
+  }
+</style>
+</head>
+<body>
+<h2 id="h2">VerbVault</h2>
+<h2 style="font-size:30px; color:pink; text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Unit 1</h2>
+<div class="container">
+  <span class="larger-star" onclick="openStar(0)">&#10026;</span>
+  <span class="larger-star" onclick="openStar(1)">&#10026;</span>
+  <span class="larger-star" onclick="openStar(2)">&#10026;</span>
+  <span class="larger-star" onclick="openStar(3)">&#10026;</span>
+  <span class="larger-star" onclick="openStar(4)">&#10026;</span>
+  <span class="larger-star" onclick="openStar(5)">&#10026;</span>
+</div>
+<p style="text-align: center; font-size: 20px;color:rgb(255, 255, 255) ;">Master Unit 1's fundamentals before venturing into Unit 2's exciting challenges!</p>
+<h2 style="font-size:30px;  color:pink; text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Unit 2</h2>
+<div class="container unit2-blur">
+  <span class="larger-star" onclick="openStar(0)">&#10026;</span>
+  <span class="larger-star" onclick="openStar(1)">&#10026;</span>
+  <span class="larger-star" onclick="openStar(2)">&#10026;</span>
+  <span class="larger-star" onclick="openStar(3)">&#10026;</span>
+  <span class="larger-star" onclick="openStar(4)">&#10026;</span>
+  <span class="larger-star" onclick="openStar(5)">&#10026;</span>
+</div>
+<p style="text-align: center; font-size: 20px;color:rgb(255, 255, 255) ;">Master Unit 2's fundamentals before venturing into Unit 3's exciting challenges!</p>
+<h2 style="font-size:30px;  color:pink; text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Unit 3</h2>
+<div class="container unit3-blur">
+  <span class="larger-star" onclick="openStar(0)">&#10026;</span>
+  <span class="larger-star" onclick="openStar(1)">&#10026;</span>
+  <span class="larger-star" onclick="openStar(2)">&#10026;</span>
+  <span class="larger-star" onclick="openStar(3)">&#10026;</span>
+  <span class="larger-star" onclick="openStar(4)">&#10026;</span>
+  <span class="larger-star" onclick="openStar(5)">&#10026;</span>
+</div>
+<p style="text-align: center; font-size: 20px;color:rgb(255, 255, 255) ;">Master Unit 3's fundamentals before venturing into Unit 4's exciting challenges!</p>
+
+
+<script>
+  var visitedStars = [];
+  function openStar(index) {
+  if (index === 0 || visitedStars[index - 1]) {
+  
+    var nextLevel = index + 1;
+    var url = 'korean/koreanlv1('+ nextLevel +').html';
+
+  
+    window.open(url);
+
+    document.querySelectorAll('.larger-star')[index].classList.add('visited');
+    visitedStars[index] = true;
+
+
+    if (visitedStars.length === 6) {
+      document.querySelector('.unit2-blur').classList.remove('unit2-blur');
+    }
+   
+    if (visitedStars.length === 14) {
+      document.querySelector('.unit3-blur').classList.remove('unit3-blur');
+    }
+  } else {
+    alert("Please finish the previous module before accessing this one.");
+  }
+}
+</script>
+
+
+</body>
+</html>

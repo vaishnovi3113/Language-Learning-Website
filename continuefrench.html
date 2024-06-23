@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Next Level</title>
+    <style>
+     body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: rgba(65, 64, 70);
+    color: #333;
+    }
+    .container {
+    max-width: 400px; 
+    height: 170px;
+    position: absolute;
+    top:270px;
+    left:482px;
+    padding: 20px;
+    border: 2px solid #000000; 
+    border-radius: 10px; 
+    text-align: center; 
+    box-shadow: 0px 3px 20px pink; 
+    }
+    .btn {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.5cm;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s ease;
+    position: absolute;
+    top: 140px;
+    right: 15px;
+   }
+   .btn:hover {
+    background: rgb(27, 27, 27);
+    color:beige;
+   }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2 style="color: beige;font-size: 22px;">Yay!! Continue to next level and learn more interesting words</h2>
+    <button class="btn" onclick="goToNextLevel()" >Continue</button>
+</div> 
+<script>
+
+    function goToNextLevel() {
+
+            window.location.href = "frenchlvs.html";
+
+    }
+</script>
+    
+</body>
+</html>

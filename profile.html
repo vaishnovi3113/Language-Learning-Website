@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: rgba(65, 64, 70);
+        color: #333;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        max-width: 600px;
+        border: 2px solid black;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0px 3px 20px pink;
+        background-color: rgba(65, 64, 70);
+        color: #333;
+        border-radius: 10px;
+    }
+    .profile {
+        width: 100%;
+        text-align: center;
+    }
+    .profile img {
+        width: 150px;
+        height: 150px;
+        border-radius: 10px; 
+    }
+    .info {
+        width: 100%;
+        margin-top: 50px;
+    }
+    .edit-form {
+        display: none;
+        color:pink;
+    }
+    .edit-button,
+    .save-button {
+        background-color: black;
+        border: 2px solid black;
+        color: white;
+        padding: 15px 25px; 
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 10 px; 
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .edit-button:hover,
+    .save-button:hover {
+        background: white;
+        color: black;
+    }
+    input[type="text"],
+    select {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 10px; 
+    }
+    #profile-name,
+    #profile-email,
+    .edit-info {
+        color: pink;
+        font-size: 20px;
+    }
+    #id{
+        color:pink;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="profile">
+        <img src="" id="profile-pic">
+        <h2 id="profile-name"></h2>
+        <p id="profile-email"></p>
+        
+    </div>
+    <div class="info">
+        <h2 class="edit-info">Edit Profile</h2>
+        <form class="edit-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="John Doe">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" value="johndoe@example.com">
+          
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" onchange="changeProfilePic()">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <button class="save-button" type="button" onclick="saveProfile()">Save</button>
+        </form>
+        <button class="edit-button" onclick="toggleEdit()">Edit</button>
+    </div>
+</div>
+
+<script>
+    function toggleEdit() {
+        var editForm = document.querySelector('.edit-form');
+        var editButton = document.querySelector('.edit-button');
+        var saveButton = document.querySelector('.save-button');
+        if (editForm.style.display === "none") {
+            editForm.style.display = "block";
+            editButton.style.display = "none";
+            saveButton.style.display = "block";
+        } else {
+            editForm.style.display = "none";
+            editButton.style.display = "block";
+            saveButton.style.display = "none";
+        }
+    }
+
+    function saveProfile() {
+        var newName = document.getElementById('name').value;
+        var newEmail = document.getElementById('email').value;
+        var gender = document.getElementById('gender').value;
+
+        document.getElementById('profile-name').textContent = 'Name: ' + newName;
+        document.getElementById('profile-email').textContent = 'Email: ' + newEmail;
+        localStorage.setItem('name', newName);
+        localStorage.setItem('email', newEmail);
+        localStorage.setItem('gender', gender);
+        changeProfilePic();
+
+        toggleEdit();
+    }
+    window.onload = function() {
+        var storedName = localStorage.getItem('name');
+        var storedEmail = localStorage.getItem('email');
+        var storedGender = localStorage.getItem('gender');
+
+        if (storedName) {
+            document.getElementById('profile-name').textContent = 'Name: ' + storedName;
+            document.getElementById('name').value = storedName;
+        }
+        if (storedEmail) {
+            document.getElementById('profile-email').textContent = 'Email: ' + storedEmail;
+            document.getElementById('email').value = storedEmail;
+        }
+
+        if (storedGender) {
+            document.getElementById('gender').value = storedGender;
+            changeProfilePic(); 
+        }
+    };
+
+    function changeProfilePic() {
+        var gender = document.getElementById('gender').value;
+        var profilePic = document.getElementById('profile-pic');
+        if (gender === "male") {
+            profilePic.src = "data:image/jpeg;base64,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";
+        } else if (gender === "female") {
+            profilePic.src = "https://imgs.search.brave.com/z2wlxGazC2dgs2lEiT5Uz4fyHbGYlhuXOFyHx6qWdr4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA3Lzc1LzcyLzMw/LzM2MF9GXzc3NTcy/MzAzMV8xMlFER2pT/cmV1THFVYVBRdG84/emJidlpCQ0JOVE0w/Qi5qcGc";
+        }
+    }
+</script>
+</body>
+</html>

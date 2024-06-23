@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VerbVault</title>
+<style>
+
+   *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box; 
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    outline:none;
+    border:none;
+    text-decoration:none;
+    text-transform:capitalize;
+    transition:2s linear;
+
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x:hidden;
+}
+p{
+    font-size:15px;
+}
+.heading{
+    text-align:center;
+    font-size: 4rem;
+    color:pink;
+    margin:12rem 0;
+}
+.heading1{
+    text-align:center;
+    font-size: 4rem;
+    color:pink;
+    margin:10rem 0;
+}
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding: 5px 100px;
+    display:flex;
+    background-color:rgba(65 64 70);
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 .5rem 1rem black;
+    z-index:99;
+}
+.navbar .btnlogin-popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border:2px solid black;
+    outline:none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: .5cm;
+    font-weight: 500;
+    margin-left: 80px;
+    transition: .5s ease;
+}
+.navbar .btnlogin-popup:hover{
+    background: black;
+    color: white;
+}
+section{
+    padding:2rem 9%;
+    color: white;
+}
+.logo{
+    font-family:chalkduster;
+    font-size: 1.4cm;
+    color:pink;
+    user-select: none;
+    margin-left: -50px;
+}
+.navbar a{  
+    font-size: 5mm;
+    color:black;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 70px;
+    transition:transform .5s;
+}
+header a:hover {
+    color:pink;
+  }
+.home{
+    display:flex;
+    align-items:right;
+    min-height:100vh;
+    background:url('WhatsApp Image 2024-05-11 at 12.39.11.jpeg') no-repeat;
+    background-size:65% 90%;
+    background-position:570px 80px;
+    background-color: rgba(65 64 70);
+ 
+}
+.home .content{
+    max-width:50rem;
+    position: absolute;
+    top:300px;
+    left: 30px;
+    
+}
+.home .content h1{
+    font-size: 6rem;
+}
+.home .content h3{
+    font-size: 3.5rem;
+    padding: 1rem 0;
+    color: pink;
+    line-height: 1.5;
+}
+/*learning*/
+body {
+    background-color: rgba(65 64 70);
+    font-family: Arial, sans-serif;
+  }
+.learning{
+    padding: 3rem 0;
+    background-color:rgba(65 64 70) ;
+}
+.card__article {
+    position: relative;
+    width: 300px; 
+    height: 250px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 1rem 1rem 1rem black;
+  }
+  
+  .card__container {
+    display: flex;
+    justify-content: center;
+  }
+  .card__img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card__data {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    background-color:#cec8c8;
+    border-radius: 8px;
+  }
+  
+  .card__description {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .card__title {
+    margin-top: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .card__button {
+    display: inline-block;
+    margin-top: 0px;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color:grey;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: color 0.5s;
+  }
+  .card__button:hover{
+    color:rgb(64, 48, 48);
+    text-decoration: underline;
+  }
+  
+/*about*/
+.about {
+    padding: 5rem 0;
+    background-color:rgba(65 64 70) ;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.abpic {
+    flex: auto;
+    margin-right: -10rem; 
+}
+
+.abpic img {
+    position: absolute;
+    top:1710px;
+    left:10px;
+    border-radius: 20px; 
+    box-shadow:1rem 1rem 1rem black;
+}
+
+.content1 {
+    flex: 1 1 auto;
+    max-width: 60%; 
+}
+
+.content1 h3 {
+    font-size: 2rem;
+    color: white;
+}
+
+.content1 p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: pink;
+}
+.certi h2{
+    color:white;
+    font-weight: bold;
+    position: absolute;
+    font-size: 20px;
+    top: 1030px;
+    right:270px;
+
+}
+.certi h4{
+    color:white;
+    font-weight: bold;
+    font-size: 15px;
+    position: absolute;
+    top: 1400px;
+    right:515px;
+
+}
+.certi h4 a{
+    text-decoration: none;
+    color:pink;
+}
+</style>
+</head>
+<body>
+    <div id="root">
+            <header>
+                <a href="#" class="logo">VerbVault<span>.</span></a>
+                <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#learning">Start learning</a>
+                <a href="#about">About</a>
+                <a href="profile.html">Profile</a>
+                <a href="lspam.html" target="_blank"><button class="btnlogin-popup">Login</button></a>
+                </nav>
+                <div class="icons"></div>
+            </header>
+</div>
+<section class="home" id="home">
+    <div class="content">
+        <h1>Welcome</h1>
+        <h3>have a great learning.</h3><br>
+        <p id="p">Please login to get started.</p>
+    </div>
+</section>
+<section class="learning" id="learning">
+    <h1 class="heading1"><span>Start</span> Learning</h1>
+    <div class="certi"><h2>Select the laguage you are intrested and give kick start to your learning journey</h2></div>
+       <div class="container">
+          <div class="card__container">
+            <article class="card__article">
+               <img src="https://tong.visitkorea.or.kr/cms/resource/18/2932618_image2_1.bmp" alt="image" class="card__img">
+
+               <div class="card__data">
+                  <span class="card__description">Course</span>
+                  <h2 class="card__title">Korean</h2>
+                  <a href="logintogetstarted.html" class="card__button">START</a>
+               </div>
+            </article>
+             <article class="card__article">
+                <img src="https://cdn.contexttravel.com/image/upload/w_1500,q_60/v1574869648/blog/Facts%20about%20the%20Eiffel%20Tower/eiffelhero.jpg" alt="image" class="card__img">
+ 
+                <div class="card__data">
+                   <span class="card__description">Course</span>
+                   <h2 class="card__title">French</h2>
+                   <a href="logintogetstarted.html" class="card__button">START</a>
+                </div>
+             </article>
+             <article class="card__article">
+                 <img src="https://www.holland.com/upload_mm/0/b/1/81584_fullimage_colorful%20orange%20field%20in%20a%20typical%20dutch%20setting%20%C2%A9%20jacobh%20via%20istock_1150x663.jpg" alt="image" class="card__img">
+  
+                 <div class="card__data">
+                    <span class="card__description">Course</span>
+                    <h2 class="card__title">Dutch</h2>
+                    <a href="logintogetstarted.html" class="card__button">START</a>
+                 </div>
+              </article>
+              <article class="card__article">
+               <img src="https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcSKxbuljk-R18NL7AV1hBjhs1tubNcahCWGEuy5omH5HWSjnMUB_-OcEYIZPXzGtNp0" alt="image" class="card__img">
+
+               <div class="card__data">
+                  <span class="card__description">Course</span>
+                  <h2 class="card__title">Spanish</h2>
+                  <a href="logintogetstarted.html" class="card__button">START</a>
+               </div>
+            </article>
+              <article class="card__article">
+                 <img src="https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcSWZkYtfsJdXfEZMekojZCwzucYQHAxPnR1Mzihl37SCD469wzlGQApKbPxt9ugsjn3" alt="image" class="card__img">
+  
+                 <div class="card__data">
+                    <span class="card__description">Course</span>
+                    <h2 class="card__title">Italian</h2>
+                    <a href="logintogetstarted.html" class="card__button">START</a>
+                 </div>
+              </article>
+          </div>
+       </div>
+       <div class="certi"><h4>Want to earn a certificate for any language<a href="certificate.html"> click here</a></h4></div>
+</section>
+
+<section class="about" id="about">
+    <h1 class="heading"><span>About</span> us</h1>
+    <div class="row">
+    <div class="abpic">
+        <img src="WhatsApp Image 2024-05-11 at 12.37.25.jpeg" alt="  " width="400" height="350">
+    </div>
+    <div class="content1">
+        <h3>Mission</h3><br>
+        <p>Personalized education.
+            Everyone learns in different ways. For the first time in history, we can analyze how millions of people learn at once to create the most effective educational system possible and tailor it to each student.
+            
+            Our ultimate goal is to give everyone access to a private tutor experience through technology.</p>
+        <br><br>
+        <h3>Making learning fun.</h3><br>
+        <p> It's hard to stay motivated when learning online, so we made VerbVault so fun that people would prefer picking up new skills over playing a game.</p><br><br>
+        <h3>Contact Us</h3><br>
+        <p>Are you having any trouble? Mail to:VerbVault@gmail.com</p>
+    </div>
+</div><br><br><br><br><br><br><br><br><br><br>
+</section>
+
+
+</body>
+</html>
